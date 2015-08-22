@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(Ajax.Startup))]
-namespace Ajax
+[assembly: OwinStartupAttribute(typeof(Aprendendo.Startup))]
+namespace Aprendendo
 {
     public partial class Startup
     {

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Ajax
+namespace Aprendendo
 {
     public class BundleConfig
     {

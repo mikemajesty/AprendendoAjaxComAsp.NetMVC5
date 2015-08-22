@@ -1,5 +1,5 @@
 ﻿
-namespace Ajax.Models
+namespace Aprendendo.Models
 {
     public class Cliente
     {
