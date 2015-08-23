@@ -1,0 +1,38 @@
+﻿
+@model IEnumerable<Aprendendo.Models.Cliente>
+
+@{
+    ViewBag.Title = "Lista";
+}
+
+<h2 style="text-align:center">Lista De Cliente</h2>
+@using (Html.BeginForm())
+{
+
+
+    <table class="table table-bordered">
+        <tr style="background-color:yellow">
+            <th>@Html.DisplayNameFor(c=>c.Nome)</th>
+            <th>@Html.DisplayNameFor(c => c.Sobrenome)</th>
+            <th>@Html.DisplayNameFor(c => c.Idade)</th>
+        </tr>
+        <tr>
+
+            @foreach (var cli in Model)
+            {
+                <td>
+                   @Html.DisplayFor(c=>cli.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(c=>cli.Sobrenome)
+                </td>
+                <td>
+                   @Html.DisplayFor(c=>cli.Idade)
+                </td>
+
+            }
+
+        </tr>
+    </table>
+    
+}

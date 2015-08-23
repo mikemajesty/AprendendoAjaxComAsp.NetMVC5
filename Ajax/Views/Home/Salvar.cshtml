@@ -1,12 +1,12 @@
 ﻿@model Aprendendo.Models.Cliente
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Salvar";
 }
 
-<h2>Index</h2>
+<h2>Salvar</h2>
 
-@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "my-form" }))
+@using (Html.BeginForm(routeValues: new { id = "frmCliSalvar" }))
 {
     @Html.AntiForgeryToken()
 
@@ -40,23 +40,23 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Salvar" class="btn btn-default" />
             </div>
         </div>
     </div>
 
 }
-<div id="result">
+<label class="label-info"></label>
+<label class="label-danger"></label>
 
-</div>
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
 @section scripts{
 
     <script type="text/javascript">
-       
-        $("#my-form").on("submit", function (e) {
+        $('#frmCliSalvar').on("submit", function (e) {
             e.preventDefault();
             debugger
             $.ajax(
@@ -65,15 +65,19 @@
                     type: this.method,
                     data: $(this).serialize(),
                     success: function (data) {
-                        $("#result").html(data);
+                        $(".label-info").val(data);
+                    },
+                    error: function (data) {
+                        $(".label-danger").val(data);
                     }
+                }
+                  );
 
-
-                });
 
 
         });
-
-
     </script>
+
+
+
 }
